@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: Parallel01IT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.548 s <<< FAILURE! - in Parallel01IT
+Feature: Demonstrate the UI test framework  Time elapsed: 0.336 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'driver' defined in com.simonkay.javaframework.configurations.springconfig.SpringConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.simonkay.javaframework.configurations.webdriver.Driver]: Factory method 'driver' threw exception; nested exception is java.lang.IllegalStateException: The driver executable does not exist: C:\Automation\chromedriver
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.simonkay.javaframework.configurations.webdriver.Driver]: Factory method 'driver' threw exception; nested exception is java.lang.IllegalStateException: The driver executable does not exist: C:\Automation\chromedriver
+Caused by: java.lang.IllegalStateException: The driver executable does not exist: C:\Automation\chromedriver
+
