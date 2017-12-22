@@ -1,4 +1,4 @@
-package com.simonkay.javaframework.utility;
+package com.simonkay.javaframework.utility.exceptions;
 
 public class InvalidDriverTypeSelectedException extends Exception {
 

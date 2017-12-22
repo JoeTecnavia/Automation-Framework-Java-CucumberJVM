@@ -2,10 +2,11 @@ package com.simonkay.javaframework.configurations.webdriver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
-import com.simonkay.javaframework.utility.InvalidDriverTypeSelectedException;
+import com.simonkay.javaframework.utility.exceptions.InvalidDriverTypeSelectedException;
 
 public class Driver extends EventFiringWebDriver {
 
@@ -47,7 +48,9 @@ public class Driver extends EventFiringWebDriver {
 	private static WebDriver getCurrentDriver(String browserType) throws InvalidDriverTypeSelectedException {
 		switch(browserType.toLowerCase()) {
 		case "chrome":  System.setProperty("webdriver.chrome.driver", "src/test/resources/binaries/chromedriver.exe");
-					    return new ChromeDriver();
+						ChromeOptions chromeOptions = new ChromeOptions();
+						chromeOptions.addArguments("--start-maximized");
+					    return new ChromeDriver(chromeOptions);
 		case "firefox": System.setProperty("webdriver.firefox.driver", "src/test/resources/binaries/geckodriver.exe");
 					    return new FirefoxDriver();
 		default: 		throw new InvalidDriverTypeSelectedException("Invalid driver specified, enter: 'chrome' or 'firefox' in the "

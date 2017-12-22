@@ -13,4 +13,4 @@ Feature: Bing Search 001
   	
     Given I am on the bing search page
     When I search for "symonk github"
-		Then I can see my results
+		Then The site "https://github.com/symonk" should be in the results

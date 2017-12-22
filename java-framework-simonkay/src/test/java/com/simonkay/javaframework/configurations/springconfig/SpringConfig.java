@@ -9,7 +9,7 @@ import com.simonkay.javaframework.configurations.CucumberWorld;
 import com.simonkay.javaframework.configurations.FrameworkProperties;
 import com.simonkay.javaframework.configurations.webdriver.Driver;
 import com.simonkay.javaframework.pageobjects.BingSearchPageObject;
-import com.simonkay.javaframework.utility.InvalidDriverTypeSelectedException;
+import com.simonkay.javaframework.utility.exceptions.InvalidDriverTypeSelectedException;
 
 @Configuration
 @PropertySource(value = {"classpath:/framework.properties"})
