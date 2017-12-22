@@ -9,27 +9,31 @@ public class FrameworkProperties {
     private Environment environment;
     
     public String getTestServerBaseAddress() {
-    	return "https://www.bing.co.uk";
+    	return environment.getProperty("env.baseurl");
     }
     
     public String getParallelForkCount() {
-    	return "";
+    	return environment.getProperty("parallel.count");
     }
     
     public String getGridAddress() {
-    	return "";
+    	return environment.getProperty("grid.endpoint");
+    }
+    
+    public String getGridOrLocal() {
+    	return environment.getProperty("run.on.grid");
     }
     
     public String getBrowserType() {
-    	return "";
+    	return environment.getProperty("browser");
     }
     
     public String getPlatformType() {
-    	return "";
+    	return environment.getProperty("platform");
     }
     
     public int seleniumImplicitWaitTime() {
-    	return 5;
+    	return environment.getProperty("driver.implicit.wait", Integer.class);
     }
     
     

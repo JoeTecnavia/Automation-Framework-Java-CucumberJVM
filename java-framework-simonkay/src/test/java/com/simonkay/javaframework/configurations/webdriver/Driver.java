@@ -2,7 +2,10 @@ package com.simonkay.javaframework.configurations.webdriver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+
+import com.simonkay.javaframework.utility.InvalidDriverTypeSelectedException;
 
 public class Driver extends EventFiringWebDriver {
 
@@ -36,16 +39,21 @@ public class Driver extends EventFiringWebDriver {
 		}
 	}
 
-	public Driver() {
-		super(getCurrentDriver());
+	public Driver(String browserType) throws InvalidDriverTypeSelectedException {
+		super(getCurrentDriver(browserType));
 		Runtime.getRuntime().addShutdownHook(SHUTDOWN_HOOK);
-
 	}
 
-	private static WebDriver getCurrentDriver() {
-		System.setProperty("webdriver.chrome.driver", "C:/Automation/chromedriver.exe");
-		return new ChromeDriver();
-		
+	private static WebDriver getCurrentDriver(String browserType) throws InvalidDriverTypeSelectedException {
+		switch(browserType.toLowerCase()) {
+		case "chrome":  System.setProperty("webdriver.chrome.driver", "src/test/resources/binaries/chromedriver.exe");
+					    return new ChromeDriver();
+		case "firefox": System.setProperty("webdriver.firefox.driver", "src/test/resources/binaries/geckodriver.exe");
+					    return new FirefoxDriver();
+		default: 		throw new InvalidDriverTypeSelectedException("Invalid driver specified, enter: 'chrome' or 'firefox' in the "
+				+ "resources/framework.properties file, this can be passed at runtime using mvn -D arguments");					
+		}
+					   
 	}
 
 }

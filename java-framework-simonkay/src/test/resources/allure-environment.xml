@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qa:environment xmlns:qa="urn:model.commons.qatools.yandex.ru">
+    <id>2a54c4d7-7d79-4615-b80d-ffc1107016a1</id>
+    <name>Allure Examples Demo Report</name>
+        <parameter>
+        <name>Education API</name>
+        <key>Education API doc</key>
+        <value>http://10.0.10.58:82/Education.API/swagger/ui/index</value>
+    </parameter>
+        <parameter>
+        <name>Polling API</name>
+        <key>Polling API doc</key>
+        <value>http://10.0.10.58:82/Polling.API/swagger/ui/index</value>
+    	</parameter>
+    	        <parameter>
+        <name>Notes API</name>
+        <key>Notes API doc</key>
+        <value>http://10.0.10.58:82/Notes.API/swagger/ui/index</value>
+    	</parameter>
+</qa:environment>

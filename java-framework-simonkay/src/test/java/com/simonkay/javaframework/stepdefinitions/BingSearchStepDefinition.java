@@ -7,6 +7,7 @@ import com.simonkay.javaframework.pageobjects.BingSearchPageObject;
 import cucumber.api.Scenario;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class BingSearchStepDefinition extends AbstractBaseStepDefinition {
@@ -27,6 +28,11 @@ public class BingSearchStepDefinition extends AbstractBaseStepDefinition {
     @When("^I search for \"(.+)\"$")
     public void I_search_for(String searchText) throws Throwable {
     	bingSearchPage.search(searchText);
+    }
+    
+    @Then("^I can see my results$")
+    public void i_can_see_my_results() throws Throwable {
+       
     }
     
 }
