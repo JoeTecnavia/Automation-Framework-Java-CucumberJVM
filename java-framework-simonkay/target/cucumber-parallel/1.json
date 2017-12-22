@@ -1,0 +1,84 @@
+[
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#Sample Feature Definition Template"
+      }
+    ],
+    "line": 4,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 5340496,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BingSearchStepDefinition.before(Scenario)"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "Simple interaction with a web page",
+        "description": "",
+        "id": "demonstrate-the-ui-test-framework;simple-interaction-with-a-web-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5984281881,
+              "error_message": "org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be \"https://www.bing.co.uk/\". Current url: \"https://www.bing.com/?cc\u003dgb\" (tried for 5 second(s) with 500 MILLISECONDS interval)\nBuild info: version: \u00273.8.1\u0027, revision: \u00276e95a6684b\u0027, time: \u00272017-12-01T18:33:54.468Z\u0027\nSystem info: host: \u0027DDEV12\u0027, ip: \u002710.0.100.169\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_91\u0027\nDriver info: com.simonkay.javaframework.configurations.webdriver.Driver\nCapabilities {acceptSslCerts: true, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.33.506120 (e3e53437346286..., userDataDir: C:\\Users\\simon\\AppData\\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 62.0.3202.94, webStorageEnabled: true}\nSession ID: 8600e112159b9ba4c4413e557a31ced1\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)\r\n\tat com.simonkay.javaframework.pageobjects.AbstractBasePageObject.navigate_and_wait(AbstractBasePageObject.java:35)\r\n\tat com.simonkay.javaframework.stepdefinitions.BingSearchStepDefinition.i_am_on_the_bing_search_page(BingSearchStepDefinition.java:24)\r\n\tat ✽.Given I am on the bing search page(C:/Users/simon/Desktop/java-selenium-parallel-framework/java-framework-simonkay/src/test/resources/features/Bingsearch.feature:7)\r\n",
+              "status": "failed"
+            },
+            "line": 7,
+            "name": "I am on the bing search page",
+            "match": {
+              "location": "BingSearchStepDefinition.i_am_on_the_bing_search_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "I search for \"symonk github\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "symonk github",
+                  "offset": 14
+                }
+              ],
+              "location": "BingSearchStepDefinition.I_search_for(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 9,
+            "name": "I can see my results",
+            "match": {},
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Demonstrate the UI test framework",
+    "description": "",
+    "id": "demonstrate-the-ui-test-framework",
+    "keyword": "Feature",
+    "uri": "C:/Users/simon/Desktop/java-selenium-parallel-framework/java-framework-simonkay/src/test/resources/features/Bingsearch.feature",
+    "tags": [
+      {
+        "line": 2,
+        "name": "@tag"
+      }
+    ]
+  }
+]

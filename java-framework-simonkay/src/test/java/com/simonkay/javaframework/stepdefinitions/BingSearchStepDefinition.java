@@ -29,9 +29,4 @@ public class BingSearchStepDefinition extends AbstractBaseStepDefinition {
     	bingSearchPage.search(searchText);
     }
     
-    
-
-    
-    
-
 }

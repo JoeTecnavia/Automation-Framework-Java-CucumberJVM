@@ -1,11 +1,1 @@
-com\simonkay\javaframework\pageobjects\AbstractBasePageObject.class
-com\simonkay\javaframework\stepdefinitions\BingSearchStepDefinition.class
 Parallel01IT.class
-com\simonkay\javaframework\configurations\springconfig\SpringConfig.class
-com\simonkay\javaframework\configurations\webdriver\Driver$1.class
-com\simonkay\javaframework\configurations\CucumberWorld.class
-com\simonkay\javaframework\configurations\webdriver\Driver.class
-com\simonkay\javaframework\stepdefinitions\AbstractBaseStepDefinition.class
-com\simonkay\javaframework\configurations\webdriver\WebDriverHooks.class
-com\simonkay\javaframework\pageobjects\BingSearchPageObject.class
-com\simonkay\javaframework\configurations\FrameworkProperties.class

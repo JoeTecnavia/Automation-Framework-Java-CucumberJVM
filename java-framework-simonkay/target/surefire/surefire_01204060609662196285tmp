@@ -1,9 +1,0 @@
-#surefire_0
-#Tue Dec 05 22:49:55 GMT 2017
-allure.results.directory=C\:\\Users\\sy\\Desktop\\java-automation-framework-by-simonkay\\java-framework-simonkay\\target/allure-results
-user.dir=C\:\\Users\\sy\\Desktop\\java-automation-framework-by-simonkay\\java-framework-simonkay
-allure.link.my-link-type.pattern=http\://isd-tfs13\:8080/tfs/collection/collection2/_workitems?id\={}
-allure.link.tms.pattern=http\://isd-tfs13\:8080/tfs/collection/collection2/_workitems?id\={}
-allure.link.issue.pattern=http\://isd-tfs13\:8080/tfs/collection/collection2/_workitems?id\={}
-localRepository=C\:\\Users\\sy\\.m2\\repository
-basedir=C\:\\Users\\sy\\Desktop\\java-automation-framework-by-simonkay\\java-framework-simonkay
