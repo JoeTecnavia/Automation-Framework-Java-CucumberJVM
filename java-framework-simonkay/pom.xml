@@ -140,6 +140,7 @@
 							<!-- Mandatory -->
 							<!-- comma separated list of package names to scan for glue code -->
 							<glue>
+								<package>com.simonkay.javaframework.configurations.webdriver</package>
 								<package>com.simonkay.javaframework.stepdefinitions</package>
 							</glue>
 							<outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>

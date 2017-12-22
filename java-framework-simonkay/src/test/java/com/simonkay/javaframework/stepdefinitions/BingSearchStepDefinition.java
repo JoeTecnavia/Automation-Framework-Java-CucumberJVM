@@ -33,7 +33,8 @@ public class BingSearchStepDefinition extends AbstractBaseStepDefinition {
 
 	@Then("^The site \"([^\"]*)\" should be in the results$")
 	public void the_site_should_be_in_the_results(String resultUrl) throws Throwable {
-		assertThat(bingSearchPage.isSearchResultPresent(resultUrl)).isTrue();
+		//assertThat(bingSearchPage.isSearchResultPresent(resultUrl)).isTrue(); //This will pass :)
+		assertThat(false).isTrue(); //This will fail of course :)
 	}
 
 }
