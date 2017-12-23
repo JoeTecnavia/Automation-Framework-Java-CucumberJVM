@@ -46,15 +46,7 @@ public class Driver extends EventFiringWebDriver {
 	}
 
 	public void embedScreenshot(Scenario scenario) {
-		if (scenario.isFailed()) {
-			try {
-				byte[] screenshot = ((TakesScreenshot) CURRENT_DRIVER).getScreenshotAs(OutputType.BYTES);
-				scenario.embed(screenshot, "image/png");
-			} catch (WebDriverException somePlatformsDontSupportScreenshots) {
-				System.err.println(somePlatformsDontSupportScreenshots
-						.getMessage());
-			}
-		}
+		
 	}
 
 	public void attachPageSource(Scenario scenario) {

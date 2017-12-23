@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: Parallel01IT
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 7.676 s <<< FAILURE! - in Parallel01IT
-Then The site "https://github.com/symonk" should be in the results(Scenario: Simple interaction with a web page 001)  Time elapsed: 0.007 s  <<< FAILURE!
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 6.961 s <<< FAILURE! - in Parallel01IT
+Then The site "https://github.com/symonk" should be in the results(Scenario: Simple interaction with a web page 001)  Time elapsed: 0.005 s  <<< FAILURE!
 org.junit.ComparisonFailure: expected:<[tru]e> but was:<[fals]e>
 
 Scenario: Simple interaction with a web page 001  Time elapsed: 0.008 s  <<< FAILURE!

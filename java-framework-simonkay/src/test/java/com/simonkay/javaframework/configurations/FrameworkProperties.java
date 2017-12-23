@@ -12,10 +12,6 @@ public class FrameworkProperties {
     	return environment.getProperty("env.baseurl");
     }
     
-    public String getParallelForkCount() {
-    	return environment.getProperty("parallel.count");
-    }
-    
     public String getGridAddress() {
     	return environment.getProperty("grid.endpoint");
     }
