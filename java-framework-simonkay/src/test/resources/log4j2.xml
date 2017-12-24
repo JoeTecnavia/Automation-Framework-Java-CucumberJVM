@@ -11,7 +11,7 @@
   <Appenders>
     <!-- Async Loggers will auto-flush in batches, so switch off immediateFlush. -->
 
-    <File name="file" fileName="target/TestLogs/test_automation_run_${date:yyyy-MM-dd HH-MM-SS.ss}.html" immediateFlush="false" append="false">
+    <File name="file" fileName="target/test_logs/test_automation_run_${date:yyyy-MM-dd HH-MM-SS.ss}.html" immediateFlush="false" append="false">
 	<HTMLLayout title="Core Automation Logs">
 	</HTMLLayout> 
     </File>

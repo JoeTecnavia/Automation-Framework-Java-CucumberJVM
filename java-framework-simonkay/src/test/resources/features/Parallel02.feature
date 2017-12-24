@@ -11,5 +11,6 @@ Feature: Parallelisation 003
 
 	@issue=007 @tmsLink=008 @severity=critical @flaky
   Scenario: User adopts a puppy 003
+  	Puppy adoption scenarios 003
     When I adopt a puppy providing "Order A"
     Then I should see the successful adoption message
