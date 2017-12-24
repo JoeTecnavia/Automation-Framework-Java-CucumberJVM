@@ -1,5 +1,8 @@
 package com.simonkay.javaframework.configurations.webdriver;
 
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
@@ -11,18 +14,27 @@ import cucumber.api.java.Before;
 
 public class WebDriverHooks {
 
+	private static final Logger LOG = LogManager.getLogger(WebDriverHooks.class);
+	
 	@Autowired
 	private Driver driver;
 
 
 	@Before
-	public void deleteCookies() {
+	public void logScenario(Scenario scenario) {
+		LOG.debug("Beginning of scenario: " + scenario.getId());
+	}
+	
+	@Before
+	public void deleteCookies(Scenario scenario) {
+		LOG.info("Deleting browser cookies after: " + scenario.getName());
 		driver.manage().deleteAllCookies();
 	}
 
 	@After
 	public void screenshotAndPageSourceOnFailure(Scenario scenario) {
 		if (scenario.isFailed()) {
+			LOG.fatal("Failure in scenario: " + scenario.getName() + " capturing screenshot");
 			try {
 				byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 				scenario.embed(screenshot, "image/png");
