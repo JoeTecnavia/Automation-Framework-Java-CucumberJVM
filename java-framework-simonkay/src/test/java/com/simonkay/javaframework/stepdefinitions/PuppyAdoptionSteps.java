@@ -3,12 +3,14 @@ package com.simonkay.javaframework.stepdefinitions;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import static org.assertj.core.api.Assertions.*;
 
 import com.simonkay.javaframework.pageobjects.PuppyAdoptionHomePage;
 import com.simonkay.javaframework.pageobjects.PuppyCartPage;
 import com.simonkay.javaframework.pageobjects.PuppyInformationPage;
 import com.simonkay.javaframework.pageobjects.PuppyOrderPage;
+import com.simonkay.javaframework.utility.localisation.LocaleHelper;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.Before;
@@ -27,7 +29,9 @@ public class PuppyAdoptionSteps extends AbstractBaseStepDefinition {
 	private PuppyCartPage puppyCartPage;
 	@Autowired
 	private PuppyOrderPage puppyOrderPage;
-
+	@Autowired
+	private LocaleHelper localeHelper;
+	
 	@Before
 	public void before(Scenario scenario) {
 		super.before(scenario);
@@ -50,7 +54,7 @@ public class PuppyAdoptionSteps extends AbstractBaseStepDefinition {
 	@Then("^I should see the successful adoption message$")
 	public void i_should_see_the_successful_adoption_message() throws Throwable {
 		LOG.debug("Asserting the successful adoption message has appeared");
-		assertThat(puppyAdoptionHomePage.is_text_present("Thank you for adopting a puppy!"));
+		assertThat(puppyAdoptionHomePage.is_text_present(localeHelper.getResource("successful.adoption.message")));
 	}
 
 }

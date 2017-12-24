@@ -1,4 +1,4 @@
-package dataproviders;
+package com.simonkay.javaframework.dataproviders;
 
 public interface DataProvider {
 	String fullname();

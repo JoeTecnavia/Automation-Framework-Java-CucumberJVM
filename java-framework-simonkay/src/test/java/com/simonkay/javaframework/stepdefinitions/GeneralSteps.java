@@ -1,10 +1,11 @@
 package com.simonkay.javaframework.stepdefinitions;
 
+import com.simonkay.javaframework.datamodels.Order;
+import com.simonkay.javaframework.dataproviders.DataProviderInjector;
+
 import cucumber.api.Scenario;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
-import datamodels.Order;
-import dataproviders.DataProviderInjector;
 
 public class GeneralSteps extends AbstractBaseStepDefinition {
 	

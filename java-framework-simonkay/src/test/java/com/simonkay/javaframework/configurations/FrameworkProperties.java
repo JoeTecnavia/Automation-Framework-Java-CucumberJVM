@@ -5,13 +5,12 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 
-import com.simonkay.javaframework.configurations.webdriver.WebDriverHooks;
-
 public class FrameworkProperties {
 	private static final Logger LOG = LogManager.getLogger(FrameworkProperties.class);
 
     @Autowired
     private Environment environment;
+   
     
     public String getTestServerBaseAddress() {
     	String result = environment.getProperty("env.baseurl");
@@ -46,6 +45,12 @@ public class FrameworkProperties {
     public int seleniumImplicitWaitTime() {
     	int result = environment.getProperty("driver.implicit.wait", Integer.class);
     	LOG.info("Test run selected selenium implicit wait: " + result);
+    	return result;
+    }
+    
+    public String getApplicationLanguage() {
+    	String result = environment.getProperty("application.language");
+    	LOG.info("Test run selected language: " + result);
     	return result;
     }
     

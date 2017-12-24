@@ -1,4 +1,4 @@
-package dataproviders;
+package com.simonkay.javaframework.dataproviders;
 
 import com.github.javafaker.Faker;
 

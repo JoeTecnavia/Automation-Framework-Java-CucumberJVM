@@ -1,9 +1,9 @@
-package datamodels;
+package com.simonkay.javaframework.datamodels;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import dataproviders.DataProviderInjector;
+import com.simonkay.javaframework.dataproviders.DataProviderInjector;
 
 public class Order {
 	private static final Logger LOG = LogManager.getLogger(Order.class);

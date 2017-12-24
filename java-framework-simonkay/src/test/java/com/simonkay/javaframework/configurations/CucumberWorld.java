@@ -5,7 +5,7 @@ import java.util.HashMap;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import datamodels.Order;
+import com.simonkay.javaframework.datamodels.Order;
 
 public class CucumberWorld {
 	private static final Logger LOG = LogManager.getLogger(CucumberWorld.class);

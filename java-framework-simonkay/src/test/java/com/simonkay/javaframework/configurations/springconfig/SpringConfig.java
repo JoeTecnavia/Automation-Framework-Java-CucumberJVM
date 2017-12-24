@@ -13,6 +13,8 @@ import com.simonkay.javaframework.pageobjects.PuppyCartPage;
 import com.simonkay.javaframework.pageobjects.PuppyInformationPage;
 import com.simonkay.javaframework.pageobjects.PuppyOrderPage;
 import com.simonkay.javaframework.utility.exceptions.InvalidDriverTypeSelectedException;
+import com.simonkay.javaframework.utility.localisation.LocaleHelper;
+
 
 @Configuration
 @PropertySource(value = {"classpath:/framework.properties"})
@@ -22,6 +24,11 @@ public class SpringConfig {
 	@Bean
 	public CucumberWorld cucumberWorld() {
 		return new CucumberWorld();
+	}
+	
+	@Bean
+	public LocaleHelper lh() {
+		return new LocaleHelper();
 	}
 
 	@Bean(destroyMethod = "quit")
@@ -77,7 +84,8 @@ public class SpringConfig {
                 properties().seleniumImplicitWaitTime(),
                 properties().getTestServerBaseAddress()
         );
-    }
+	}
+
 	
 	
 }

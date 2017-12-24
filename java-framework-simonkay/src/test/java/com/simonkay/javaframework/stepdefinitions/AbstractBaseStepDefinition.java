@@ -16,9 +16,6 @@ public abstract class AbstractBaseStepDefinition {
 	private static final Logger LOG = LogManager.getLogger(AbstractBaseStepDefinition.class);
 
 	protected Scenario scenario;
-
-	@Autowired
-	protected LocaleHelper locale;
 	
 	@Autowired
 	protected CucumberWorld cucumberWorld;

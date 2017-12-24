@@ -1,22 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: Parallel01IT
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 19.926 s <<< FAILURE! - in Parallel01IT
-Then I should see the successful adoption message(Scenario: User adopts a puppy)  Time elapsed: 0.016 s  <<< ERROR!
-org.openqa.selenium.TimeoutException: 
-Expected condition failed: waiting for Page to contain "Thank you for adopting a puppy2!" (tried for 10 second(s) with 500 MILLISECONDS interval)
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'SY-PC', ip: '192.168.1.64', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_131'
-Driver info: com.simonkay.javaframework.configurations.webdriver.Driver
-Capabilities {acceptSslCerts: true, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.33.506120 (e3e53437346286..., userDataDir: C:\Users\sy\AppData\Local\T...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 63.0.3239.84, webStorageEnabled: true}
-Session ID: fef4a5fd1847bed2c39adb4da3efcc8a
-
-Scenario: User adopts a puppy  Time elapsed: 0.021 s  <<< ERROR!
-org.openqa.selenium.TimeoutException: 
-Expected condition failed: waiting for Page to contain "Thank you for adopting a puppy2!" (tried for 10 second(s) with 500 MILLISECONDS interval)
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'SY-PC', ip: '192.168.1.64', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_131'
-Driver info: com.simonkay.javaframework.configurations.webdriver.Driver
-Capabilities {acceptSslCerts: true, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.33.506120 (e3e53437346286..., userDataDir: C:\Users\sy\AppData\Local\T...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 63.0.3239.84, webStorageEnabled: true}
-Session ID: fef4a5fd1847bed2c39adb4da3efcc8a
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.95 s <<< FAILURE! - in Parallel01IT
+Feature: Adopt A Puppy  Time elapsed: 1.157 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lh' defined in com.simonkay.javaframework.configurations.springconfig.SpringConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.simonkay.javaframework.utility.localisation.LocaleHelper]: Factory method 'lh' threw exception; nested exception is java.lang.NullPointerException
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.simonkay.javaframework.utility.localisation.LocaleHelper]: Factory method 'lh' threw exception; nested exception is java.lang.NullPointerException
+Caused by: java.lang.NullPointerException
 

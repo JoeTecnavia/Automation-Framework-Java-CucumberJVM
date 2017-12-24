@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import datamodels.Order;
+import com.simonkay.javaframework.datamodels.Order;
 
 public class PuppyOrderPage extends AbstractBasePageObject {
 	private static final Logger LOG = LogManager.getLogger(PuppyOrderPage.class);
