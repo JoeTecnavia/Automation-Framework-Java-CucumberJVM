@@ -3,9 +3,9 @@ package datamodels;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.github.javafaker.Faker;
+import dataproviders.DataProviderInjector;
 
-public class Order extends BaseModel {
+public class Order {
 	private static final Logger LOG = LogManager.getLogger(Order.class);
 
 	private String orderName;
@@ -13,12 +13,20 @@ public class Order extends BaseModel {
 	private String orderEmail;
 	private String orderPaymentType;
 
-	public Order(String order_paymentType) {
-		this.orderName = getFaker().name().fullName();
-		this.orderAddress = getFaker().address().streetAddress();
-		this.orderEmail = getFaker().internet().emailAddress();
+	public Order(String order_paymentType, DataProviderInjector data) {
+		this.orderName = data.fullname();
+		this.orderAddress = data.address();
+		this.orderEmail = data.email();
 		this.orderPaymentType = order_paymentType;
-		LOG.info("Instantiating order: " + this.toString());
+		LOG.debug("Creating order using data provider " + this.toString());
+	}
+	
+	public Order(String orderName, String orderAddress, String orderEmail, String order_paymentType) {
+		this.orderName = orderName;
+		this.orderAddress = orderAddress;
+		this.orderEmail = orderEmail;
+		this.orderPaymentType = order_paymentType;
+		LOG.debug("Creating order using manual data: " + this.toString());
 	}
 
 	public String getOrderName() {
@@ -43,5 +51,6 @@ public class Order extends BaseModel {
 				+ orderAddress + ", orderEmail=" + orderEmail
 				+ ", orderPaymentType=" + orderPaymentType + "]";
 	}
+
 
 }

@@ -32,6 +32,7 @@ public class PuppyAdoptionSteps extends AbstractBaseStepDefinition {
 	@When("^I adopt a puppy providing \"([^\"]*)\"$")
 	public void i_adopt_a_puppy_providing(String orderAlias) throws Throwable {
 		LOG.debug("Attempting to adopt a puppy using order" + orderAlias);
+		puppyAdoptionHomePage.select_a_puppy();
 
 	}
 
