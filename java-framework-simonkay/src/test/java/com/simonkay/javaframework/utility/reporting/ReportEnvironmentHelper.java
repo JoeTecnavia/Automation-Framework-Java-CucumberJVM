@@ -1,48 +1,50 @@
 package com.simonkay.javaframework.utility.reporting;
 
 import java.io.File;
-import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.xml.sax.SAXException;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 public class ReportEnvironmentHelper {
 	
-    @Autowired
-    private Environment environment;
-    
 	private String allureEnvironmentXmlPath;
 	private File xmlFile;
-	private DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	private DocumentBuilderFactory dbFactory;
     private DocumentBuilder dBuilder;
     private Document doc;
-    private final NamedNodeMap  server;
-    private final NamedNodeMap  browser;
-    private final NamedNodeMap  execution;
     
-    
+ 
 	public ReportEnvironmentHelper() {
-		allureEnvironmentXmlPath = "src/test/resources/AllureSettings/environment.xml";
-		xmlFile = new File(allureEnvironmentXmlPath);
+		this.allureEnvironmentXmlPath = "src/test/resources/allure_settings/environment.xml";
+		xmlFile = new File(this.allureEnvironmentXmlPath);
+		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 		try {
-		dBuilder = dbFactory.newDocumentBuilder();
-        doc = dBuilder.parse(xmlFile);
-        doc.getDocumentElement().normalize();	
-        
-		} catch (SAXException | ParserConfigurationException | IOException e1) {
-			e1.printStackTrace();
+		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+		Document doc = docBuilder.parse(xmlFile);
+		NodeList nodeList = doc.getElementsByTagName("parameter");
+		Element browser = (Element) nodeList.item(1);
+		Element execution = (Element) nodeList.item(2);
+		Element server = (Element) nodeList.item(0);
+		System.out.println(browser.getElementsByTagName("name").item(0).getTextContent());
+		System.out.println(browser.getElementsByTagName("value").item(0).getTextContent());
+		System.out.println(execution.getElementsByTagName("name").item(0).getTextContent());
+		System.out.println(execution.getElementsByTagName("value").item(0).getTextContent());
+		System.out.println(server.getElementsByTagName("name").item(0).getTextContent());
+		System.out.println(server.getElementsByTagName("value").item(0).getTextContent());
+		browser.setAttribute("attrib", "attrib_value"); 
+
+		
+		}catch (Exception ex) {
+			ex.printStackTrace();
 		}
-        server = doc.getElementsByTagName("qa:environment").item(0).getAttributes();
-        browser = doc.getElementsByTagName("parameter").item(1).getAttributes();
-        execution = doc.getElementsByTagName("parameter").item(2).getAttributes();
+		
+
 	}
 	
 	private void addNewParamater(String name, String key, String value) {
@@ -57,7 +59,6 @@ public class ReportEnvironmentHelper {
 	@Test
 	public void tester() {
 		ReportEnvironmentHelper reh = new ReportEnvironmentHelper();
-		System.out.println(reh.server.getNamedItem("name"));
 	}
 
 }

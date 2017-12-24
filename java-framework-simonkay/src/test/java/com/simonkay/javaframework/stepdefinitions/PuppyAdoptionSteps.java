@@ -37,11 +37,20 @@ public class PuppyAdoptionSteps extends AbstractBaseStepDefinition {
 		super.before(scenario);
 	}
 	
+	/**
+	 * Navigates to the application home page
+	 * @throws Throwable
+	 */
 	@Given("^I am on the homepage$")
 	public void i_am_on_the_homepage() throws Throwable {
 		puppyAdoptionHomePage.navigate_and_wait();
 	}
 
+	/**
+	 * Places an adoption order for a puppy, reading in an order from an alias from the world object
+	 * @param orderAlias
+	 * @throws Throwable
+	 */
 	@When("^I adopt a puppy providing \"([^\"]*)\"$")
 	public void i_adopt_a_puppy_providing(String orderAlias) throws Throwable {
 		LOG.debug("Attempting to adopt a puppy using order" + orderAlias);
@@ -51,6 +60,10 @@ public class PuppyAdoptionSteps extends AbstractBaseStepDefinition {
 		puppyOrderPage.order_puppy(cucumberWorld.getOrderByAlias(orderAlias));
 	}
 
+	/**
+	 * Asserts that the puppy successful registration message appears after succesful adoptions
+	 * @throws Throwable
+	 */
 	@Then("^I should see the successful adoption message$")
 	public void i_should_see_the_successful_adoption_message() throws Throwable {
 		LOG.debug("Asserting the successful adoption message has appeared");

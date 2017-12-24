@@ -1,4 +1,4 @@
-@smoke @regression
+@smoke @regression @ignore
 Feature: Parallelisation 003
   As a brilliant and caring individual
   I want to be able to adopt a puppy
