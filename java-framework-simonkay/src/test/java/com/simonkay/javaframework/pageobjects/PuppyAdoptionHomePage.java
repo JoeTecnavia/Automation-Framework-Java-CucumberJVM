@@ -20,7 +20,7 @@ public class PuppyAdoptionHomePage extends AbstractBasePageObject {
 	public PuppyAdoptionHomePage(WebDriver driver, int implicitWait, String url) {
 		super(driver, implicitWait, url + relativePath);
 		PageFactory.initElements(driver, this);
-		LOG.info("Creating new BaseSearchPageObject, PageElements initialized!");
+		LOG.info("Creating new PuppyAdoptionHomePage, PageElements initialized!");
 	}
 
 	public void select_a_puppy() {

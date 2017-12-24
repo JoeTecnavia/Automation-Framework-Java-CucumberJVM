@@ -9,6 +9,9 @@ import com.simonkay.javaframework.configurations.CucumberWorld;
 import com.simonkay.javaframework.configurations.FrameworkProperties;
 import com.simonkay.javaframework.configurations.webdriver.Driver;
 import com.simonkay.javaframework.pageobjects.PuppyAdoptionHomePage;
+import com.simonkay.javaframework.pageobjects.PuppyCartPage;
+import com.simonkay.javaframework.pageobjects.PuppyInformationPage;
+import com.simonkay.javaframework.pageobjects.PuppyOrderPage;
 import com.simonkay.javaframework.utility.exceptions.InvalidDriverTypeSelectedException;
 
 @Configuration
@@ -40,8 +43,36 @@ public class SpringConfig {
 	}
 
 	@Bean
-    public PuppyAdoptionHomePage bingSearchPage() {
+    public PuppyAdoptionHomePage puppyAdoptionHomePage() {
         return new PuppyAdoptionHomePage(
+                driver(),               
+                properties().seleniumImplicitWaitTime(),
+                properties().getTestServerBaseAddress()
+        );
+    }
+
+	
+	@Bean
+    public PuppyInformationPage puppyInformationPage() {
+        return new PuppyInformationPage(
+                driver(),               
+                properties().seleniumImplicitWaitTime(),
+                properties().getTestServerBaseAddress()
+        );
+    }
+	
+	@Bean
+    public PuppyCartPage puppyCartPage() {
+        return new PuppyCartPage(
+                driver(),               
+                properties().seleniumImplicitWaitTime(),
+                properties().getTestServerBaseAddress()
+        );
+    }
+	
+	@Bean
+    public PuppyOrderPage puppyOrderPage() {
+        return new PuppyOrderPage(
                 driver(),               
                 properties().seleniumImplicitWaitTime(),
                 properties().getTestServerBaseAddress()

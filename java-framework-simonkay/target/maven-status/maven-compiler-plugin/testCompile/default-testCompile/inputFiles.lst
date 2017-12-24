@@ -1,5 +1,9 @@
 C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\com\simonkay\javaframework\pageobjects\AbstractBasePageObject.java
+C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\com\simonkay\javaframework\pageobjects\PuppyCartPage.java
+C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\com\simonkay\javaframework\pageobjects\PuppyOrderPage.java
+C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\dataproviders\DataProviderInjector.java
 C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\com\simonkay\javaframework\pageobjects\PuppyAdoptionHomePage.java
+C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\com\simonkay\javaframework\pageobjects\PuppyInformationPage.java
 C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\com\simonkay\javaframework\configurations\webdriver\Driver.java
 C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\com\simonkay\javaframework\configurations\FrameworkProperties.java
 C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\com\simonkay\javaframework\utility\exceptions\InvalidDriverTypeSelectedException.java
@@ -7,6 +11,7 @@ C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\tar
 C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\com\simonkay\javaframework\configurations\webdriver\WebDriverHooks.java
 C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\com\simonkay\javaframework\stepdefinitions\GeneralSteps.java
 C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\datamodels\Order.java
+C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\dataproviders\DataProvider.java
 C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\com\simonkay\javaframework\stepdefinitions\PuppyAdoptionSteps.java
 C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\com\simonkay\javaframework\utility\reporting\ReportEnvironmentHelper.java
 C:\Users\sy\Desktop\java-selenium-parallel-framework\java-framework-simonkay\src\test\java\com\simonkay\javaframework\configurations\CucumberWorld.java
