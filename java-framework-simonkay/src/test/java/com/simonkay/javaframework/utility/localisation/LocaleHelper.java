@@ -5,18 +5,19 @@ import java.util.ResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 
 import com.simonkay.javaframework.utility.enums.Language;
 
 public class LocaleHelper implements LanguageImplementor {
 	private static final Logger LOG = LogManager.getLogger(LocaleHelper.class);
 	
-	
 	private Language language;
 	private ResourceBundle resource;
 	
-	public LocaleHelper() {
-		language = getLanguage();
+	public LocaleHelper(String lang) {
+		language = getLanguage(lang);
 		LOG.debug("Retrieved application language as: " + this.language.toString());
 	}
 	
@@ -26,9 +27,8 @@ public class LocaleHelper implements LanguageImplementor {
 	}
 
 	@Override
-	public Language getLanguage() {
-		String language = "english";
-		
+	public Language getLanguage(String language) {
+			
 		switch(language.toLowerCase()) {
 		case "english":
 			LOG.debug("Retrieving language and setting resources for: English");
@@ -52,6 +52,5 @@ public class LocaleHelper implements LanguageImplementor {
 		}				
 	}
 	
-
 	
 }

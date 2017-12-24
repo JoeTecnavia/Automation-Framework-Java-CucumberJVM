@@ -25,11 +25,6 @@ public class SpringConfig {
 	public CucumberWorld cucumberWorld() {
 		return new CucumberWorld();
 	}
-	
-	@Bean
-	public LocaleHelper lh() {
-		return new LocaleHelper();
-	}
 
 	@Bean(destroyMethod = "quit")
 	@Scope("singleton")
@@ -84,6 +79,11 @@ public class SpringConfig {
                 properties().seleniumImplicitWaitTime(),
                 properties().getTestServerBaseAddress()
         );
+	}
+	
+	@Bean
+	public LocaleHelper localeHelper() {
+		return new LocaleHelper(properties().getApplicationLanguage());
 	}
 
 	
