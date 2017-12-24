@@ -9,7 +9,8 @@ Feature: Adopt A Puppy
     Given The order "Order A" exists
     And I am on the homepage
 
-	@issue=007 @tmsLink=008 @severity=critical @flaky
+	@SeverityLevel.CRITICAL @TestCaseId("abc-007") @Issue("geo-999")
   Scenario: User adopts a puppy  
+  	This is a scenario description in the report
     When I adopt a puppy providing "Order A"
     Then I should see the successful adoption message

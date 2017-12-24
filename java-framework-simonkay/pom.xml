@@ -246,6 +246,18 @@
 							<name>allure.results.directory</name>
 							<value>${project.build.directory}/allure-results</value>
 						</property>
+						<property>
+ -							<name>allure.link.issue.pattern</name>
+ -							<value>http://localhost/issues?id={}</value>
+ -						</property>
+ -						<property>
+ -							<name>allure.link.tms.pattern</name>
+ -							<value>http://localhost/testcase?id={}</value>
+ -						</property>
+ -						<property>
+ -							<name>allure.link.my-link-type.pattern</name>
+ -							<value>http://localhost/mylink?id={}</value>
+ -						</property>
 					</systemProperties>
 					<forkCount>${parallelfork.count}</forkCount>
 					<reuseForks>false</reuseForks>

@@ -9,7 +9,6 @@ Feature: Parallelisation 002
     Given The order "Order A" exists
     And I am on the homepage
 
-	@issue=007 @tmsLink=008 @severity=critical @flaky
   Scenario: User adopts a puppy 002
   	Puppy adoption scenarios 002
     When I adopt a puppy providing "Order A"
