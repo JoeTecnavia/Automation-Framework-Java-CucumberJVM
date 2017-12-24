@@ -7,7 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 import com.simonkay.javaframework.configurations.CucumberWorld;
 import com.simonkay.javaframework.configurations.springconfig.SpringConfig;
-import com.simonkay.javaframework.configurations.webdriver.WebDriverHooks;
+import com.simonkay.javaframework.utility.localisation.LocaleHelper;
 
 import cucumber.api.Scenario;
 
@@ -17,6 +17,9 @@ public abstract class AbstractBaseStepDefinition {
 
 	protected Scenario scenario;
 
+	@Autowired
+	protected LocaleHelper locale;
+	
 	@Autowired
 	protected CucumberWorld cucumberWorld;
 

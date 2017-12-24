@@ -15,9 +15,11 @@ import org.openqa.selenium.support.ui.LoadableComponent;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.github.javafaker.Faker;
 import com.simonkay.javaframework.configurations.webdriver.WaitConditions;
+import com.simonkay.javaframework.utility.localisation.LocaleHelper;
 
 public abstract class AbstractBasePageObject extends LoadableComponent<AbstractBasePageObject> {
 	private static final Logger LOG = LogManager.getLogger(AbstractBasePageObject.class);
@@ -26,6 +28,8 @@ public abstract class AbstractBasePageObject extends LoadableComponent<AbstractB
 	private final WebDriverWait wait;
 	private final String url;
 
+	@Autowired
+	protected LocaleHelper locale;
 
 	public AbstractBasePageObject(WebDriver driver, int implicitWait, String url) {
 		this.driver = driver;
