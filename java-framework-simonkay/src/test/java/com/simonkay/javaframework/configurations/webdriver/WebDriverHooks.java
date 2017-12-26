@@ -8,18 +8,24 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.simonkay.javaframework.utility.reporting.ReportEnvironmentHelper;
+
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
 public class WebDriverHooks {
-
+	private static boolean runOnce = true;
 	private static final Logger LOG = LogManager.getLogger(WebDriverHooks.class);
 	
 	@Autowired
 	private Driver driver;
+	
+	@Autowired
+	private ReportEnvironmentHelper rh;
 
 
+	
 	@Before
 	public void logScenario(Scenario scenario) {
 		LOG.debug("Beginning of scenario: " + scenario.getId());

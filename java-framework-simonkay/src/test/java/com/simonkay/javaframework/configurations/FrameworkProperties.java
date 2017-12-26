@@ -54,5 +54,25 @@ public class FrameworkProperties {
     	return result;
     }
     
+    public String getProductName() {
+    	String result = environment.getProperty("product.name");
+    	LOG.info("Test run product: " + result);
+    	return result;
+    }
+    
+    public String getDatabaseConn() {
+    	String result = environment.getProperty("database.connection");
+    	LOG.info("Database Instance: " + result);
+    	return result;
+    }
+    
+    public String getAngular() {
+    	String result = environment.getProperty("is.frontend.angular");
+    	LOG.info("Frontend is angular? " + result);
+    	return result;
+    }
+
+
+    
     
 }
