@@ -1,4 +1,4 @@
-@smoke @regression
+@regression
 Feature: Adopt A Puppy
   As a brilliant and caring individual
   I want to be able to adopt a puppy
