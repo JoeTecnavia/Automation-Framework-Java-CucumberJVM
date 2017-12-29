@@ -72,6 +72,7 @@ public abstract class AbstractBasePageObject extends LoadableComponent<AbstractB
 			wait_until_true_or_timeout(WaitConditions.pageContainsText(text));
 		} catch (TimeoutException te) {
 			LOG.fatal(te.getMessage() + "\n\nPageSource:\n\n" + getDriver().getPageSource());
+			return false;
 		}
 		return true;
 	}
