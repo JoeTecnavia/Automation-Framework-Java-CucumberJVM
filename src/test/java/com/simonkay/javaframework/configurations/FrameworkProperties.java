@@ -14,7 +14,6 @@ public class FrameworkProperties {
     
     public String getTestServerBaseAddress() {
     	String result = environment.getProperty("env.baseurl");
-    	LOG.info("Test run environment baseUrl: " + result);
     	return result;
     }
     
@@ -44,7 +43,6 @@ public class FrameworkProperties {
     
     public int seleniumImplicitWaitTime() {
     	int result = environment.getProperty("driver.implicit.wait", Integer.class);
-    	LOG.info("Test run selected selenium implicit wait: " + result);
     	return result;
     }
     

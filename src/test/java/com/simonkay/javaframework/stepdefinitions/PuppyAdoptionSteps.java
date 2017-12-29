@@ -67,7 +67,7 @@ public class PuppyAdoptionSteps extends AbstractBaseStepDefinition {
 	@Then("^I should see the successful adoption message$")
 	public void i_should_see_the_successful_adoption_message() throws Throwable {
 		LOG.debug("Asserting the successful adoption message has appeared");
-		assertThat(puppyAdoptionHomePage.is_text_present(localeHelper.getResource("successful.adoption.message")));
+		assertThat(puppyAdoptionHomePage.is_text_present("snakes"));
 	}
 
 }

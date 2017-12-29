@@ -28,11 +28,12 @@ public class SpringConfig {
 	public CucumberWorld cucumberWorld() {
 		return new CucumberWorld();
 	}
-
+	
 	@Bean(destroyMethod = "quit")
 	@Scope("singleton")
 	public Driver driver() {
 		Driver wd = null;
+		
 		try {
 		wd = new Driver(properties().getBrowserType());
 		} catch(InvalidDriverTypeSelectedException ex) {

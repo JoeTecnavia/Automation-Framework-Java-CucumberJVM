@@ -25,9 +25,16 @@
 		<allure.version>1.6.4</allure.version>
 		<slf4j-api.version>1.8.0-alpha2</slf4j-api.version>
 		<slf4j-log4j12.version>1.8.0-alpha2</slf4j-log4j12.version>
+		<angular.driver>1.0</angular.driver>
 	</properties>
 
 	<dependencies>
+	    <!-- https://mvnrepository.com/artifact/com.paulhammant/ngwebdriver -->
+		<dependency>
+		    <groupId>com.paulhammant</groupId>
+		    <artifactId>ngwebdriver</artifactId>
+		    <version>${angular.driver}</version>
+		</dependency>    
 	    <dependency>
 		    <groupId>com.github.javafaker</groupId>
 		    <artifactId>javafaker</artifactId>
