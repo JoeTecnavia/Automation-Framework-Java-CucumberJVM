@@ -69,5 +69,14 @@ public class PuppyAdoptionSteps extends AbstractBaseStepDefinition {
 		LOG.debug("Asserting successful message in correct language appears");
 		assertThat(puppyAdoptionHomePage.is_text_present(localeHelper.getResource("successful.adoption.message"))).isTrue();
 	}
+	
+	/**
+	 * Auto failing just to demonstrate failure in the report for 1 scenario
+	 * @throws Throwable
+	 */
+	@Then("^I will fail on purpose$")
+	public void i_will_fail_on_purpose() throws Throwable {
+	    assertThat(true).isFalse();
+	}
 
 }
