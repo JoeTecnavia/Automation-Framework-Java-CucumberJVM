@@ -1,42 +1,42 @@
+#NOTE: Install the slack plugin on jenkins and configure the app on slack & hook/token in jenkins under configure "tools".
+
 node {
    def mvnHome
-    try {
-   stage('SOURCE') { // for display purposes
-      // Get some code from a GitHub repository
-     git '' //repo here
-     //notifyBuild('STARTED')
+   try {
+   stage('FETCH SRC') {
+     git 'https://github.com/symonk/java-selenium-parallel-framework.git'
    }
-   stage('TESTS') {
-    // some test logic here for parameters etc...
-     
+   stage('Execution') {
+     bat '"C:\\Program Files (x86)\\Jenkins/workspace\\GUI Automated Tests\\regression_chrome.bat"'
+   }
+   stage('REPORT') {
+     allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
     }
-  stage('REPORT') {
-      //Generate Allure report for the test run
-      allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
-    }
-    }catch (e) {
-    // If there was an exception thrown, the build failed
+   stage('LOGGING') {
+    archiveArtifacts '/target/test_logs/*.html'
+   }
+   }catch (e) {
     currentBuild.result = "FAILED"
-    notifybuild('FAILED')
     throw e
-  } 
+  } finally {
+
+    notifyBuild(currentBuild.result)
+  }
 }
 
-   def notifyBuild(String buildStatus = 'STARTED') {
+ def notifyBuild(String buildStatus = 'STARTED') {
   // build status of null means successful
   buildStatus =  buildStatus ?: 'SUCCESSFUL'
 
   // Default values
-  def colorName = 'RED'
-  def colorCode = '#FF0000'
-  def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
-  def summary = "${subject} (${env.BUILD_URL}allure)"
+  def colorName = 'YELLOW'
+  def colorCode = '#FFFF00'
+  def subject = "Test Auto: *${Tests_for_execution}* was *${buildStatus}*"
+  def summary = "${subject}: Report:[${env.BUILD_URL}allure]"
+ 
 
   // Override default values based on build status
-  if (buildStatus == 'STARTED') {
-    color = 'YELLOW'
-    colorCode = '#FFFF00'
-  } else if (buildStatus == 'SUCCESS') {
+if (buildStatus == 'SUCCESSFUL') {
     color = 'GREEN'
     colorCode = '#00FF00'
   } else {
@@ -47,4 +47,3 @@ node {
   // Send notifications
   slackSend (color: colorCode, message: summary)
  }
-
