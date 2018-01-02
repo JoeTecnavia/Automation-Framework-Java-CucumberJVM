@@ -22,7 +22,7 @@
 		<parallelfork.count>10</parallelfork.count>
 		<spring.version>5.0.2.RELEASE</spring.version>
 		<aspectj.version>1.8.4</aspectj.version>
-		<allure.version>1.6.4</allure.version>
+		<allure.version>2.0-BETA21</allure.version>
 		<slf4j-api.version>1.8.0-alpha2</slf4j-api.version>
 		<slf4j-log4j12.version>1.8.0-alpha2</slf4j-log4j12.version>
 		<angular.driver>1.0</angular.driver>
@@ -43,7 +43,7 @@
 		<dependency>
 		    <groupId>io.qameta.allure</groupId>
 		    <artifactId>allure-cucumber-jvm</artifactId>
-		    <version>2.0-BETA16</version>
+		    <version>${allure.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
