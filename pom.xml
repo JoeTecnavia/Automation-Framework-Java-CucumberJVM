@@ -41,9 +41,9 @@
 		    <version>0.14</version>
 		</dependency>
 		<dependency>
-			<groupId>ru.yandex.qatools.allure</groupId>
-			<artifactId>allure-cucumber-jvm-adaptor</artifactId>
-			<version>${allure.version}</version>
+		    <groupId>io.qameta.allure</groupId>
+		    <artifactId>allure-cucumber-jvm</artifactId>
+		    <version>2.0-BETA16</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
@@ -243,7 +243,7 @@
 				<configuration>
 					<testFailureIgnore>true</testFailureIgnore>
 					<argLine>-javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar	         
-							 -Dcucumber.options="--plugin ru.yandex.qatools.allure.cucumberjvm.AllureReporter"
+							 -Dcucumber.options="--plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"
 					</argLine>					
 					<properties>
 						<property>
@@ -254,17 +254,17 @@
 							<name>allure.results.directory</name>
 							<value>${project.build.directory}/allure-results</value>
 						</property>
-						<property>
+												<property>
 							<name>allure.link.issue.pattern</name>
-							<value>http://isd-tfs13:8080/tfs/D2i13/D2i_13/_workitems?id={}</value>
+							<value>http://jira-here?id={}</value>
 						</property>
 						<property>
 							<name>allure.link.tms.pattern</name>
-							<value>http://isd-tfs13:8080/tfs/D2i13/D2i_13/_workitems?id={}</value>
+							<value>http://jira-here?id={}</value>
 						</property>
 						<property>
 							<name>allure.link.my-link-type.pattern</name>
-							<value>http://isd-tfs13:8080/tfs/D2i13/D2i_13/_workitems?id={}</value>
+							<value>http://jira-here?id={}</value>
 						</property>
 					</systemProperties>
 					<forkCount>${parallelfork.count}</forkCount>
@@ -298,7 +298,6 @@
                                 <directory>src/test/resources/allure_settings/</directory>
                                 <includes>
                                     <include>environment.xml</include>
-                                    <include>allure.properties</include>
                                 </includes>
                             </resource>
                         </resources>

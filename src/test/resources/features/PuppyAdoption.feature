@@ -9,7 +9,7 @@ Feature: Adopt A Puppy
     Given The order "Order A" exists
     And I am on the homepage
 
-	@SeverityLevel.CRITICAL @TestCaseId("abc-007") @Issue("geo-999")
+	@severity=blocker @tmsLink=007 @issue=008 @flaky
   Scenario: User adopts a puppy  
   	This is a scenario description in the report
     When I adopt a puppy providing "Order A"
