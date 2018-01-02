@@ -26,6 +26,7 @@
 		<slf4j-api.version>1.8.0-alpha2</slf4j-api.version>
 		<slf4j-log4j12.version>1.8.0-alpha2</slf4j-log4j12.version>
 		<angular.driver>1.0</angular.driver>
+		<cucumber.tags></cucumber.tags>
 	</properties>
 
 	<dependencies>
@@ -200,8 +201,7 @@
 							<monochrome>true</monochrome>
 							<!-- The tags to run, maps to CucumberOptions.tags property you can 
 								pass ANDed tags like "@tag1","@tag2" and ORed tags like "@tag1,@tag2,@tag3" -->
-							<tag1>${tag1}</tag1>
-							<tag2>${tag2}</tag2>
+								
 							<!-- If set to true, only feature files containing the required tags 
 								shall be generated. -->
 							<filterFeaturesByTags>false</filterFeaturesByTags>
