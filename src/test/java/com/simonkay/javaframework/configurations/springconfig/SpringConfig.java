@@ -2,6 +2,9 @@ package com.simonkay.javaframework.configurations.springconfig;
 
 import java.util.HashMap;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -22,6 +25,7 @@ import com.simonkay.javaframework.utility.reporting.ReportEnvironmentHelper;
 @Configuration
 @PropertySource(value = {"classpath:/framework.properties"})
 public class SpringConfig {
+	private static final Logger LOG = LogManager.getLogger(SpringConfig.class);
 
 
 	@Bean
@@ -37,7 +41,7 @@ public class SpringConfig {
 		try {
 		wd = new Driver(properties().getBrowserType());
 		} catch(InvalidDriverTypeSelectedException ex) {
-			System.out.println("Invalid driver specified" + ex);
+			LOG.debug("Invalid driver specified" + ex);
 			System.exit(1);
 		}
 		return wd;
