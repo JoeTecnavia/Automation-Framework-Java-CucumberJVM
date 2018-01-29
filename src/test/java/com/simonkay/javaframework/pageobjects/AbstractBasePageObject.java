@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.simonkay.javaframework.configurations.webdriver.WaitConditions;
 
-public abstract class AbstractBasePageObject extends LoadableComponent<AbstractBasePageObject> {
+public abstract class AbstractBasePageObject {
 	private static final Logger LOG = LogManager.getLogger(AbstractBasePageObject.class);
 	private final WebDriver driver;
 	private final int timeToWait;
